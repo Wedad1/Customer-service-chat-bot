@@ -1,0 +1,383 @@
+{
+  "intents": [
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "I have some questions about the fighting robot, can you answer them?"
+        },
+        {
+          "text": "I want information about the fighting robot"
+        },
+        {
+          "text": "Tell me about the fighting robot"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "RobotInformation",
+      "examples": [
+        {
+          "text": "I want information about the robot arm"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thankyou",
+      "examples": [
+        {
+          "text": "No thanks"
+        },
+        {
+          "text": "ok I understand"
+        },
+        {
+          "text": "ok thank you"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "MotorDegree",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "degree of motor",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "maximum degree",
+          "synonyms": [
+            "max"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Motor Degree",
+          "synonyms": [
+            "degree"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "NoOfArmMotors",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "how much motor",
+          "synonyms": [
+            "Much"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Number of motors",
+          "synonyms": [
+            "number"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "TypeOfArmMotor",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Motor type",
+          "synonyms": [
+            "Type"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome"
+              },
+              {
+                "text": "Hi, How can I help you?"
+              },
+              {
+                "text": "I don't understand, please rewrite clearly"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "digress_in": "does_not_return",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1625158559545",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Type is servo Motor, any thing else?"
+              },
+              {
+                "text": "Type is Servo, any thing else?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "@TypeOfArmMotor",
+      "dialog_node": "node_1_1625157685444",
+      "previous_sibling": "node_2_1625157894251"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The arm contains six motors, any thing else?"
+              },
+              {
+                "text": "6 Motors, any thing else?"
+              },
+              {
+                "text": "six motors, any thing else?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "@NoOfArmMotors",
+      "dialog_node": "node_2_1625157894251",
+      "previous_sibling": "node_5_1625157980739"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sure, What do you want to know?"
+              },
+              {
+                "text": "Sure, What is your questions?"
+              },
+              {
+                "text": "What do you want to know?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Greeting",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1625154713480"
+    },
+    {
+      "type": "standard",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@MotorDegree",
+      "dialog_node": "node_5_1625157980739",
+      "previous_sibling": "node_4_1625154713480"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome, I hope you got the information you wanted"
+              },
+              {
+                "text": "Welcome, glad to help you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thankyou",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1625158559545",
+      "previous_sibling": "node_1_1625157685444"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "180 degrees, any thing else?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1625157980739",
+      "conditions": "@MotorDegree:(Motor Degree)",
+      "dialog_node": "response_10_1625460321131",
+      "previous_sibling": "response_4_1625460295786"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The maximum degree for each motor is 180, any thing else?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_5_1625157980739",
+      "conditions": "@MotorDegree:(maximum degree)",
+      "dialog_node": "response_4_1625460295786"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sure, What do you want to know?"
+              },
+              {
+                "text": "Sure, What is your questions?"
+              },
+              {
+                "text": "What do you want to know?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1625154713480",
+      "disabled": true,
+      "conditions": "#Greeting:",
+      "dialog_node": "response_4_1625460598356"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1625154713480",
+      "disabled": true,
+      "conditions": "",
+      "dialog_node": "response_7_1625460942303",
+      "previous_sibling": "response_4_1625460598356"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "180 , any thing else?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1625157980739",
+      "conditions": "@MotorDegree:(degree of motor)",
+      "dialog_node": "response_9_1625460361248",
+      "previous_sibling": "response_10_1625460321131"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Customer Service",
+  "language": "en",
+  "description": ""
+}
