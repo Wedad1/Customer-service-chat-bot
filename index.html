@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Robot arm control interface</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form  action="connect1.php" method="POST">
+        <p class="p1">control Panel</p>
+    <div>
+    <p >Motor1 <input type="range" min="0" max="180" value="0" class="slider" id="Range" name="M1"> <span id="S1"></span></p>
+    <p >Motor2 <input type="range" min="0" max="180" value="0" class="slider" id="Range2" name="M2"> <span id="S2"></span> </p>
+    <p >Motor3 <input type="range" min="0" max="180"  value="0" class="slider"id="Range3" name="M3"> <span id="S3"></span> </p>
+    <p >Motor4 <input type="range" min="0" max="180" value="0" class="slider"id="Range4" name="M4"> <span id="S4"></span> </p>
+    <p >Motor5 <input type="range" min="0" max="180" value="0" class="slider"id="Range5" name="M5"> <span id="S5"></span> </p>
+    <p >Motor6 <input type="range" min="0" max="180" value="0" class="slider"id="Range6" name="M6"> <span id="S6"></span> </p>
+    <div class="b"><input type="submit" class="button" value="Save" name="save"><br><br>
+      <input type="submit" class="button" value="ON" name="on"></div>
+      <p class="p2">Direction control</p>
+    <div class="d"><input type="submit" class="button2" value="Left" name="Left">
+        <input type="submit" class="button2" value="Stop" name="Stop">
+        <input type="submit" class="button2" value="right" name="Right"></div>
+        <div class="d2"><input type="submit" class="button2" value="Forward" name="Forward">
+        <input type="submit" class="button2" value="Backward" name="Backward"></div>
+        </div>
+</div>
+</form>
+ <script src="script.js"></script>
+</body>
+</html>
