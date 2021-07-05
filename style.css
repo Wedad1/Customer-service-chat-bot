@@ -1,0 +1,207 @@
+body {
+  background-image: url("backg3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color:black;
+  
+  }
+      .slider {
+        -webkit-appearance: none;
+        width:319px;
+        height: 15px;
+        background: #fff;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+  
+  .slider:hover {
+  opacity: 1;
+  }
+  .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 21px;
+  background:#ca8ccc	;
+  cursor: pointer;
+  }
+  
+  
+  div {
+  position:absolute;
+  top: 138px;
+  left:220px;
+  font-size: 23px;
+  }
+  .button{
+  width: 75px;
+  height: 36px;
+  border: 1px solid #ca8ccc;
+  padding:8px;
+  color:black;
+  background: #fff;
+  font-size: 18px;
+  border-radius: 12px;
+  }
+  .button:hover{
+  background: #d5a3d6;
+  
+  }
+  
+  div.b{
+  position:absolute;
+  top:130px ;
+  left: 493px;
+  
+  }
+  span{
+  color:black; 
+  font-size: 23px;
+  }
+  div.d{
+    position:absolute;
+    top:370px ;
+    left: 115px;
+    width: 1000px;
+     }
+     div.d2{
+    position:absolute;
+    top:426px ;
+    left: 165px;
+    width: 1200px;
+     }
+     .button2{
+  width: 76px;
+  height: 36px;
+  border: 1px solid #ca8ccc;
+  padding:8px;
+  color:black;
+  background: #fff;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  font-family:"Monaco";
+  }
+  .button2:hover{
+  background: #d5a3d6;
+  }
+  .p1{
+      font-family:"Lucida Handwriting";
+      font-size: 50px;
+      margin-top: 55px;
+      margin-left: 140px;
+      
+  }
+  .p2{
+      font-family:"Lucida Handwriting";
+      font-size: 25px;
+      margin-top:32px;
+      margin-left: 139px;  
+
+  }
+  @media (max-width:500px) {
+      body{
+      background-image: url("backg3.jpg");
+      
+      }
+      .slider {
+        -webkit-appearance: none;
+        width:210px;
+        height: 13px;
+        background: #fff;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+  
+  .slider:hover {
+  opacity: 1;
+  }
+  .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 18px;
+  background:#ca8ccc	;
+  cursor: pointer;
+  }
+  
+  
+  div {
+  position:absolute;
+  top: 11%;
+  left:4px;
+  font-size: 20px;
+  }
+  .button{
+  width: 45;
+  height: 25px;
+  border: 1px solid #ca8ccc;
+  padding:3px;
+  color:black;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  }
+  .button:hover{
+  background: #d5a3d6;
+  
+  }
+  
+  div.b{
+  position:absolute;
+  top:127px ;
+  left: 303px;
+  
+  
+  }
+  span{
+  color:black; 
+  font-size: 20px;
+  }
+  div.d{
+    position:absolute;
+    top:335px ;
+    left: 27px;
+    width: 1200px;
+     }
+     div.d2{
+    position:absolute;
+    top:400px ;
+    left: 75px;
+    width: 1200px;
+     }
+     .button2{
+  width: 85;
+  height: 40px;
+  border: 1px solid #ca8ccc;
+  padding:8px;
+  color:black;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  margin: 5px;
+  border-radius: 20px;
+  font-family:"Monaco";
+  }
+  .button2:hover{
+  background: #d5a3d6;
+  }
+  .p1{
+      font-family:"Lucida Handwriting";
+      font-size: 33px;
+      margin-top: 30px;
+      margin-left: 31px;  
+  }
+  .p2{
+      font-family:"Lucida Handwriting";
+      font-size: 22px;
+      margin-top: 30px;
+      margin-left: 59px;  
+  }}
